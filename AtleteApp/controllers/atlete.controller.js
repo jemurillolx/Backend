@@ -48,6 +48,7 @@ exports.atlete_details = function (req, res) {
 };
 
 //HTTP PUT
+/*funciona utilizando el _id */
 exports.atlete_update = function (req, res) {
     Atlete.findByIdAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
         if (err) return next(err);

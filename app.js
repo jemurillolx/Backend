@@ -21,7 +21,7 @@ const client = redis.createClient(REDIS_URL);
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb://localhost:27017';
+let dev_db_url = 'mongodb://jOrgito:jOrgito2018@ds161183.mlab.com:61183/jorgito';
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
@@ -29,6 +29,7 @@ const db = mongoose.connection;
 
 //port mongo
 let port = 4000;
+/**redis server exit */
 
 //view engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));

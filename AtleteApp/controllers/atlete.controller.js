@@ -57,11 +57,11 @@ exports.atlete_update = function (req, res) {
 
 //DELETE
 exports.atlete_delete = function (req, res) {
-    redis_deleted(req.params.mail)
+    deletedata(req.params.mail)
     Atlete.findByIdAndRemove(req.params.mail, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
-        deletedata(req.params.mail)
+    
     })
 };
 

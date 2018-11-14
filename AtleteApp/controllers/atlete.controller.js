@@ -50,16 +50,18 @@ exports.atlete_details = function (req, res) {
 //HTTP PUT
 /*funciona utilizando el _id */
 exports.atlete_update = function (req, res) {
-    Atlete.findByIdAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
+    Atlete.findOneAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
+   // Atlete.findByIdAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
         if (err) return next(err);
         res.send('Atlete udpated.');
     });
+    Atl
 };
 
 //DELETE
 exports.atlete_delete = function (req, res) {
     deletedata(req.params.mail)
-    Atlete.findByIdAndRemove(req.params.mail, function (err) {
+    Atlete.findOneAndDelete(req.params.mail, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
     

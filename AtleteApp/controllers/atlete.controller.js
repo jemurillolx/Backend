@@ -71,9 +71,9 @@ exports.atlete_delete = function (req, res) {
 function insert(name, atlete) {
     client.hmset(name, [
         'name', atlete.name,
-        'mail', atlete.size,
-        'years', atlete.color,
-        'birthday', atlete.cost,
+        'mail', atlete.mail,
+        'years', atlete.years,
+        'birthday', atlete.birthday,
         'status', atlete.status
     ], function(err, reply){
         if(err){

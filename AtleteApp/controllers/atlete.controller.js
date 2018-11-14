@@ -50,12 +50,11 @@ exports.atlete_details = function (req, res) {
 //HTTP PUT
 /*funciona utilizando el _id */
 exports.atlete_update = function (req, res) {
-    Atlete.findOneAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
+    Atlete.findOneAndUpdate(req.params.mail, { $set: req.body }, function (err, atlete) {
    // Atlete.findByIdAndUpdate(req.params.mail, { $set: req.body }, function (err, product) {
         if (err) return next(err);
         res.send('Atlete udpated.');
     });
-    Atl
 };
 
 //DELETE

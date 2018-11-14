@@ -5,7 +5,7 @@ let AtleteSchema = new Schema({
     name: {type: String, required: true, max: 100},
     mail: {type: String, required: true, max: 100},
     years: {type: Number, required: false},
-    bithday: {type: String, required: false, max: 100},
+    birthday: {type: String, required: false, max: 100},
     status: {type: Number, required: true, default: 0},
 });
 

@@ -18,3 +18,4 @@ router.put('/:mail/update', atlete_controller.atlete_update);
 router.delete('/:mail/delete', atlete_controller.atlete_delete);
 
 module.exports = router;
+//npm i redux

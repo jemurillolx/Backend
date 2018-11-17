@@ -47,6 +47,14 @@ exports.atlete_details = async function (req, res) {
     })
 };
 
+//HTTP GET BY id
+exports.atlete_details_by_id = async function (req, res) {
+    await Atlete.find({ _id: req.params.id }, function (err, atlete) {
+        if (err) return next(err);
+        res.send(atlete);
+    })
+ };
+
 //HTTP PUT
 /*funciona utilizando el _id */
 exports.atlete_update =  async function (req, res) {

@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const product = require('./AtleteApp/routes/atlete.route'); // Imports routes for the products
 const app = express();
+const cors = require('cors');
 //redis cache
 //const redis = require('redis');
 const methodoverride = require('method-override');
@@ -29,7 +30,7 @@ mongoose.Promise = global.Promise;
 mongoose.set('useFindAndModify', false);
 //mongoose.set('usefindOneAndUpdate',true);
 const db = mongoose.connection;
-
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //port mongo
 let port = 3000;
 /**redis server exit */
@@ -38,6 +39,8 @@ let port = 3000;
 //app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 //app.set('cache', cache)
 //body-parser
+
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/home', product);
@@ -49,7 +52,6 @@ app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);
 });
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 /*
 client.on('connect', () => {
     console.log(`connected to redis`);

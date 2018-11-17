@@ -9,8 +9,13 @@ router.get('/atletes', atlete_controller.getatletes);
 //HTTP POST
 router.post('/create', atlete_controller.atlete_create);
 
-//HTTP GET by id
+//HTTP GET by mail
 router.get('/:mail', atlete_controller.atlete_details);
+
+
+//HTTP GET by id
+router.get('/byid/:id', atlete_controller.atlete_details_by_id);
+
 
 //HTTP PUT
 router.put('/update/:id', async (req, res) => {

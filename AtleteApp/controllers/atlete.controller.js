@@ -70,11 +70,23 @@ exports.atlete_update =  async function (req, res) {
 			
         } 
     );
-    let i =  mail;
+    //console.log(atlete.id);
+    /*let atlete2 = new Atlete(
+        {
+            id: req.params.id,
+            name: req.params.name,
+            mail: req.params.mail,
+            years: req.params.years,
+            birthday: req.params.birthday,
+            status: req.params.status
+			
+        } 
+    );*/
+   /* let i =  mail;
     console.log(req);
     i = req.body.mail;
     console.log(i);
-    console.log(atlete.id + ' 0' + atlete.mail);
+    console.log(atlete.id + ' 0' + atlete.mail);*/
     //await  Atlete.findByIdAndUpdate(atlete.id, atlete);
    //console.log(a);
    //console.log(req.body);

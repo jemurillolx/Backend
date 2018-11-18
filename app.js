@@ -32,15 +32,15 @@ mongoose.set('useFindAndModify', false);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 //port mongo
-let port = 3000;
+let port = process.env.PORT || 3000;
 /**redis server exit */
 
 //view engine
 //app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 //app.set('cache', cache)
 //body-parser
-
-app.use(cors());
+app.set('port', process.env.PORT || 3000);
+app.use(cors({ origin: 'http://localhost:4200'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/home', product);

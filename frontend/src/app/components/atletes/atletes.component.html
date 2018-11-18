@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form   #atleteForm="ngForm" (ngSubmit)="addAtlete(atleteForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="atleteService.selectedAtlete._id" >
+            <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name"  [(ngModel)]="atleteService.selectedAtlete.name" #name="ngModel"
+                  placeholder="Enter you Name">
+
+                </div>
+                <div class="input-field col s12">
+                  <input type="text" name="mail" #mail="ngModel" [(ngModel)]="atleteService.selectedAtlete.mail"
+                  placeholder="Enter you Mail">
+                </div>
+                <div class="input-field col s12">
+                  <input type="text" name="years" #years="ngModel" [(ngModel)]="atleteService.selectedAtlete.years"
+                  placeholder="Enter you Years">
+                </div>
+                <div class="input-field col s12">
+                  <input type="text" name="birthday" #birthday="ngModel" [(ngModel)]="atleteService.selectedAtlete.birthday"
+                  placeholder="Enter you birthday">
+                </div>
+                <div class="input-field col s12">
+                  <input type="text" name="status" #status="ngModel" [(ngModel)]="atleteService.selectedAtlete.status"
+                  placeholder="Enter you status">
+                </div>
+                <div class="card-action">
+                  <div class= "input-field col s12">
+                      <button class="btn right" (click)="resf()">refesh</button>
+                      <button class="btn right">Save</button>
+                      <button class="btn right" (click)="restForm(atleteForm)">Clear</button>
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s7">
+    <table>
+      <head>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Birthday</th>
+        <th>Years</th>
+        <th>Status</th>
+      </head>
+      <body>
+        <tr *ngFor="let atlete of atleteService.atletes">
+          <td>{{ atlete.name}}</td>
+          <td>{{ atlete.mail}}</td>
+          <td>{{ atlete.birthday}}</td>
+          <td>{{ atlete.years}}</td>
+          <td>{{ atlete.status}}</td>
+          <td>
+            <a (click)="editAtlete(atlete)">
+            <i class="material-icons">edit</i>
+            </a>
+              <a (click)="deleteAtlete(atlete._id)">
+              <i class="material-icons">delete</i>
+              </a>
+
+            </td>
+        </tr>
+      </body>
+    </table>
+  </div>
+</div>

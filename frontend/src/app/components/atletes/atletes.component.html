@@ -42,14 +42,15 @@
   </div>
   <div class="col s7">
     <table>
-      <head>
+      <thead>
         <th>Name</th>
         <th>Mail</th>
         <th>Birthday</th>
         <th>Years</th>
         <th>Status</th>
-      </head>
-      <body>
+        <th>Actions</th>
+      </thead>
+      <tbody>
         <tr *ngFor="let atlete of atleteService.atletes">
           <td>{{ atlete.name}}</td>
           <td>{{ atlete.mail}}</td>
@@ -66,7 +67,7 @@
 
             </td>
         </tr>
-      </body>
+      </tbody>
     </table>
   </div>
 </div>

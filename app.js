@@ -8,6 +8,8 @@ const cors = require('cors');
 //const redis = require('redis');
 const methodoverride = require('method-override');
 const exphbs = require('express-handlebars');
+
+
 /*var cache = require('express-redis-cache')({
     port: 6379,
     host: 'localhost',
@@ -40,7 +42,7 @@ let port = process.env.PORT || 3000;
 //app.set('cache', cache)
 //body-parser
 app.set('port', process.env.PORT || 3000);
-app.use(cors({ origin: 'http://localhost:4200'}));
+app.use(cors());//{ origin: 'http://localhost:4200'}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/home', product);

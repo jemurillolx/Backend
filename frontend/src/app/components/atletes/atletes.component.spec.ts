@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Component, OnInit } from '@angular/core';
 import { AtletesComponent } from './atletes.component';
 
 describe('AtletesComponent', () => {
